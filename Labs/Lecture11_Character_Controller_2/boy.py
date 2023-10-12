@@ -23,7 +23,7 @@ class Sleep:
 
     @staticmethod
     def draw(boy):
-        boy.image.clip_composite_draw(boy.frame * 100, boy.action * 100, math.pi / 2, ' ', boy.x, boy.y, 100, 100)
+        boy.image.clip_composite_draw(boy.frame * 100, boy.action * 100, 100, 100, math.pi / 2, ' ', boy.x-25, boy.y-25, 100, 100)
         pass
 
 class Idle:
@@ -52,7 +52,7 @@ class Idle:
 class StateMachine:
     def __init__(self, boy):
         self.boy = boy
-        self.cur_state = Idle
+        self.cur_state = Sleep
 
     def start(self):
         self.cur_state.enter(self.boy)
